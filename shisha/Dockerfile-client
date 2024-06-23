@@ -1,10 +1,17 @@
 # build environment
-FROM node:20.13.1-alpine as build
+FROM --platform=linux/amd64 node:20.13.1-alpine as build
 WORKDIR /app
 
 ENV PATH /app/node_modules/.bin:$PATH
 COPY client/package.json /app/package.json
-RUN npm install --silent
+
+RUN npm config set registry http://registry.npmjs.org/
+RUN npm config get proxy
+RUN npm config rm proxy
+RUN npm config rm https-proxy
+
+RUN npm install --loglevel verbose
+# --silent
 RUN npm config set unsafe-perm true #https://stackoverflow.com/questions/52196518/could-not-get-uid-gid-when-building-node-docker
 RUN npm install react-scripts@5.0.1 -g --silent
 COPY client/ /app
