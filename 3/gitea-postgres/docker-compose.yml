@@ -1,6 +1,6 @@
 services:
   gitea:
-    image: registry.vsfi.ru/gitea:1.22.0
+    image: registry.vsfi.ru/gitea/gitea:1.22.0
     environment:
       - DB_TYPE=postgres
       - DB_HOST=db:5432
@@ -13,7 +13,7 @@ services:
     ports:
       - 3000:3000
   db:
-    image: registry.vsfi.ru/postgres:16.3-alpine3.20
+    image: registry.vsfi.ru/library/postgres:16.3-alpine3.20
     environment:
       - POSTGRES_USER=gitea
       - POSTGRES_PASSWORD=gitea

@@ -1,4 +1,4 @@
-FROM registry.vsfi.ru/golang:1.22-alpine3.20 as builder
+FROM registry.vsfi.ru/library/golang:1.22-alpine3.20 as builder
 
 WORKDIR /app
 COPY main.go .
