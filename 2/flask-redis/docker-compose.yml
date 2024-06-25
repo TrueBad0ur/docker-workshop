@@ -1,6 +1,6 @@
 services:
   redis:
-    image: redislabs/redismod
+    image: registry.vsfi.ru/redismod.slim:v1
     ports:
       - '6379:6379'
   web:

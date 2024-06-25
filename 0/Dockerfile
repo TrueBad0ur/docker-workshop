@@ -1,3 +1,3 @@
-FROM nginx:1.27.0-alpine
+FROM registry.vsfi.ru/nginx:1.27.0-alpine
 
 COPY ./index.html /usr/share/nginx/html/index.html
