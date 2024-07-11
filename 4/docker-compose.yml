@@ -10,5 +10,5 @@ services:
       sleep 10
       && dd if=/dev/zero bs=1M | head -c 10000M | tail
       && sleep 100000
-    image: registry.vsfi.ru/library/debian:bookworm
+    image: debian:bookworm
     restart: always

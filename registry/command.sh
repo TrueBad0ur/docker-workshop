@@ -1,6 +1,6 @@
 #!/bin/bash
 
-docker run -p 5000:5000 --rm --name registry registry.vsfi.ru/library/registry:2
+docker run -p 5000:5000 --rm --name registry registry:2
 
 curl localhost:5000/v2/_catalog
 
